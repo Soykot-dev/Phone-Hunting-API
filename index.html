@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.2/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="shortcut icon" href="./image/smartphone.png" type="image/x-icon">
+    <title>Practice phone hunting api</title>
+</head>
+
+<body class="max-w-screen-xl mx-auto ">
+    <header class="">
+        <h1 class="text-5xl text-center mt-4 font-medium text-lime-400">Welcome to my Phone hunting API</h1>
+    </header>
+    <div class="flex justify-center items-center mt-8">
+        <input id="input-Field" class=" w-80 bg-lime-100 text-black py-2 rounded  pl-4 bg" type="text" name=""
+            placeholder="Search.....">
+        <button onclick="handleSearch()"
+            class="bg-lime-300 hover:bg-lime-500 text-black py-2 rounded px-4">Search</button>
+    </div>
+    <main>
+        <!-- Search result -->
+        <section id="phones-container" class="grid px-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-10  mb-10">
+        </section>
+        <!-- Show all button container -->
+        <section id="show-all-container" class="hidden">
+            <div class="flex justify-center mb-10">
+                <button onclick="handleShowAll()" class="btn btn-outline btn-primary">Show All</button>
+            </div>
+        </section>
+        <section id="loading-spinner" class="hidden">
+            <div class="flex justify-center mt-40 ">
+                <span class="loading loading-spinner text-success loading-lg"></span>
+            </div>
+        </section>
+        <!-- Show details modal -->
+        <section>
+            <dialog id="show_details_modal" class="modal modal-bottom sm:modal-middle">
+                <form method="dialog" class="modal-box">
+                    <div id="show-detail-container">
+                    </div>
+                    <div class="modal-action">
+                        <!-- if there is a button in form, it will close the modal -->
+                        <button class="btn btn-error">Close</button>
+                    </div>
+                </form>
+            </dialog>
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+    <!-- Script -->
+    <script src="script/script.js"></script>
+</body>
+
+</html>
