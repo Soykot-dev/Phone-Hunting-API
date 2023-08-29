@@ -4,7 +4,18 @@ const loadPhone = async (inputFieldText, isShowAll) => {
     const data = await res.json();
     const phones = data.data;
     displayPhone(phones, isShowAll);
+    displayNotFound(phones);
 };
+////////
+const displayNotFound = (phones) => {
+    const notFound = document.getElementById('not-found');
+    if(phones.length === 0){
+        notFound.classList.remove('hidden')
+    }
+    else{
+        notFound.classList.add('hidden')
+    }
+}
 ////////
 const displayPhone = (phones, isShowAll) => {
     ////////
